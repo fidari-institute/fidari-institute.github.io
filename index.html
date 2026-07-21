@@ -13,6 +13,7 @@
             --text-muted: #606770;
             --accent-navy: #0b192c;
             --accent-teal: #1f7a8c;
+            --accent-lime: #88c425;
             --border-color: #e1e4e8;
             --border-hover: #b0b8c1;
             --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.03);
@@ -53,7 +54,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(250, 251, 252, 0.85);
+            background: rgba(250, 251, 252, 0.88);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             z-index: 100;
@@ -74,15 +75,14 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .brand-icon {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-teal);
-            border-radius: 50%;
-            display: inline-block;
+        .brand-logo-img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .nav-links {
@@ -261,7 +261,7 @@
             line-height: 1.5;
         }
 
-        /* --- Featured Research --- */
+        /* --- Featured Research & Experiments --- */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -310,6 +310,35 @@
             font-size: 1rem;
             color: var(--text-muted);
             margin-bottom: 24px;
+        }
+
+        .experiment-spec-meta {
+            background-color: #f8fafc;
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+
+        .experiment-spec-meta div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .experiment-spec-meta div:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-label {
+            color: var(--text-muted);
+        }
+
+        .spec-value {
+            color: var(--accent-navy);
+            font-weight: 600;
         }
 
         /* --- Vision Section --- */
@@ -392,7 +421,7 @@
         <div class="container">
             <nav>
                 <a href="#" class="brand">
-                    <span class="brand-icon"></span>
+                    <img src="Fidari Logo.png" alt="Fidari Institute Logo" class="brand-logo-img">
                     Fidari Institute
                 </a>
                 <ul class="nav-links">
@@ -461,32 +490,53 @@
             </div>
         </section>
 
-        <!-- Featured Research -->
+        <!-- Featured Research & Experiments -->
         <section id="projects">
             <div class="container">
                 <span class="section-tag">Current Projects</span>
-                <h2 class="section-title">Featured Research</h2>
+                <h2 class="section-title">Featured Research & Experiments</h2>
                 <div class="featured-grid">
+
+                    <!-- EXPERIMENT CARD 1 -->
                     <div class="featured-card">
                         <div>
                             <span class="status-badge">Status: In Progress</span>
                             <h3>Behavioral Adaptation Under Unresolved Audit Probability</h3>
                             <p>Experimental investigation into how uncertainty regarding future oversight influences autonomous agent behavior.</p>
+                            
+                            <div class="experiment-spec-meta">
+                                <div><span class="spec-label">Environment:</span> <span class="spec-value">Sandboxed Multi-Agent Market</span></div>
+                                <div><span class="spec-label">Audit Probe Rate:</span> <span class="spec-value">p ∈ [0.0, 0.45]</span></div>
+                                <div><span class="spec-label">Primary Metric:</span> <span class="spec-value">Alignment Divergence Score</span></div>
+                            </div>
                         </div>
                         <div>
-                            <a href="#" class="btn btn-secondary">View Experiment Specs</a>
+                            <a href="https://github.com/your-org/fidari-research/blob/main/experiments/audit-probability-specs.md" target="_blank" rel="noopener" class="btn btn-secondary">
+                                View Experiment Specs ↗
+                            </a>
                         </div>
                     </div>
+
+                    <!-- EXPERIMENT CARD 2 -->
                     <div class="featured-card">
                         <div>
                             <span class="status-badge">Status: Research Agenda</span>
                             <h3>Secret Loyalty Detection</h3>
                             <p>Methods for identifying persistent objective preferences across changing context windows and deployment regimes.</p>
+                            
+                            <div class="experiment-spec-meta">
+                                <div><span class="spec-label">Environment:</span> <span class="spec-value">Iterated Bargaining Matrix</span></div>
+                                <div><span class="spec-label">Evaluation Vector:</span> <span class="spec-value">Hidden Payoff Matrix Shift</span></div>
+                                <div><span class="spec-label">Primary Metric:</span> <span class="spec-value">Deception Detection AUC</span></div>
+                            </div>
                         </div>
                         <div>
-                            <a href="#" class="btn btn-secondary">Read Overview</a>
+                            <a href="https://github.com/your-org/fidari-research/blob/main/research/secret-loyalty-overview.md" target="_blank" rel="noopener" class="btn btn-secondary">
+                                Read Overview ↗
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -506,7 +556,7 @@
         <div class="container">
             <div class="footer-content">
                 <a href="#" class="brand">
-                    <span class="brand-icon"></span>
+                    <img src="Fidari Logo.png" alt="Fidari Institute Logo" class="brand-logo-img">
                     Fidari Institute
                 </a>
                 <ul class="footer-nav">
@@ -518,7 +568,7 @@
             </div>
             <div class="footer-bottom">
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://github.com/your-org/fidari-research" target="_blank" rel="noopener">GitHub Repository</a>
                 </div>
                 <p>&copy; 2026 Fidari Institute for Agentic Studies. All rights reserved.</p>
             </div>
