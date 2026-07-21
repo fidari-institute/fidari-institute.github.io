@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidari Institute for Agentic Studies</title>
+    <style>
+        /* --- Root Variables & Theme Setup --- */
+        :root {
+            --bg-color: #fafbfc;
+            --card-bg: #ffffff;
+            --text-main: #1c2024;
+            --text-muted: #606770;
+            --accent-navy: #0b192c;
+            --accent-teal: #1f7a8c;
+            --border-color: #e1e4e8;
+            --border-hover: #b0b8c1;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+            --transition-speed: 0.25s ease;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        /* --- Base & Reset --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 251, 252, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--accent-navy);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-teal);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-navy);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-navy);
+            color: #ffffff;
+            border: 1px solid var(--accent-navy);
+        }
+
+        .btn-primary:hover {
+            background-color: #1a2a40;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background-color: #f6f8fa;
+            transform: translateY(-1px);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            padding: 180px 0 120px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        #network-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--accent-navy);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* --- Generic Section Styles --- */
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-teal);
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            color: var(--accent-navy);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        /* --- Mission Section --- */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .mission-text p {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* --- Research Pillars --- */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .pillar-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all var(--transition-speed);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .pillar-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.2rem;
+            color: var(--accent-navy);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* --- Featured Research --- */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .featured-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-subtle);
+            transition: all var(--transition-speed);
+        }
+
+        .featured-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .status-badge {
+            align-self: flex-start;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: #f0f4f8;
+            color: var(--accent-navy);
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .featured-card h3 {
+            font-size: 1.4rem;
+            color: var(--accent-navy);
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .featured-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        /* --- Publications Timeline --- */
+        .timeline {
+            margin-top: 40px;
+            position: relative;
+            padding-left: 24px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: var(--accent-teal);
+        }
+
+        .timeline-meta {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-navy);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color var(--transition-speed);
+        }
+
+        .timeline-title:hover {
+            color: var(--accent-teal);
+        }
+
+        /* --- Open Source Section --- */
+        .open-source-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .open-source-text {
+            max-width: 600px;
+        }
+
+        .open-source-text h3 {
+            font-size: 1.5rem;
+            color: var(--accent-navy);
+            margin-bottom: 12px;
+        }
+
+        .open-source-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* --- Vision Section --- */
+        .vision {
+            background-color: var(--accent-navy);
+            color: #ffffff;
+            text-align: center;
+            padding: 120px 0;
+            border-bottom: none;
+        }
+
+        .vision blockquote {
+            font-size: 2.2rem;
+            font-weight: 400;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--bg-color);
+            padding: 60px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-nav a, .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-nav a:hover, .social-links a:hover {
+            color: var(--accent-navy);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 850px) {
+            .hero h1 { font-size: 2.6rem; }
+            .mission-grid { grid-template-columns: 1fr; gap: 16px; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .open-source-box { flex-direction: column; align-items: flex-start; gap: 24px; }
+            .vision blockquote { font-size: 1.6rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .nav-links { gap: 16px; }
+            .footer-content, .footer-bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="brand">
+                    <span class="brand-icon"></span>
+                    Fidari Institute
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#opensource">Open Source</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <canvas id="network-canvas"></canvas>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Understanding Autonomous AI Agents.</h1>
+                    <p>Fidari researches how autonomous AI agents behave under incentives, uncertainty, oversight, and social environments to build safer and more trustworthy AI systems.</p>
+                    <div class="hero-buttons">
+                        <a href="#research" class="btn btn-primary">Explore Research</a>
+                        <a href="#publications" class="btn btn-secondary">Read Research Agenda</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="about">
+            <div class="container">
+                <div class="mission-grid">
+                    <div>
+                        <span class="section-tag">Mission</span>
+                        <h2 class="section-title">Why Agentic Studies?</h2>
+                    </div>
+                    <div class="mission-text">
+                        <p>As AI systems become increasingly autonomous, they begin operating as persistent decision-making actors rather than isolated tools. Fidari studies the behavioral dynamics of these agents, including hidden objectives, behavioral adaptation, strategic interaction, and methods for evaluating trustworthiness under changing conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Pillars -->
+        <section id="research">
+            <div class="container">
+                <span class="section-tag">Core Focus</span>
+                <h2 class="section-title">Research Pillars</h2>
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <h3>Agentic Motivation</h3>
+                        <p>Understanding hidden objectives, incentive conflicts, and preference stability across dynamic environments.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Agentic Verification</h3>
+                        <p>Developing methods to detect alignment failures, behavioral divergence, secret loyalties, and evaluation-sensitive behavior.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Agentic Governance</h3>
+                        <p>Studying authority structures, institutional behavior, oversight mechanisms, and governance dynamics among autonomous agents.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Agentic Society</h3>
+                        <p>Investigating cooperation, competition, negotiation, coalition formation, and emergent multi-agent systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Research -->
+        <section>
+            <div class="container">
+                <span class="section-tag">Current Projects</span>
+                <h2 class="section-title">Featured Research</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div>
+                            <span class="status-badge">Status: In Progress</span>
+                            <h3>Behavioral Adaptation Under Unresolved Audit Probability</h3>
+                            <p>Experimental investigation into how uncertainty regarding future oversight influences autonomous agent behavior.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-secondary">View Experiment Specs</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div>
+                            <span class="status-badge">Status: Research Agenda</span>
+                            <h3>Secret Loyalty Detection</h3>
+                            <p>Methods for identifying persistent objective preferences across changing context windows and deployment regimes.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-secondary">Read Overview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <div class="container">
+                <span class="section-tag">Outputs</span>
+                <h2 class="section-title">Publications & Artifacts</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-meta">Working Paper • 2026</div>
+                        <a href="#" class="timeline-title">
+                            Quantifying Goal Drift in Multi-Step Agentic Workflows ↗
+                        </a>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-meta">Technical Report • 2025</div>
+                        <a href="#" class="timeline-title">
+                            Auditing Sandboxed Multi-Agent Environments ↗
+                        </a>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-meta">Benchmark • 2025</div>
+                        <a href="#" class="timeline-title">
+                            Agentic-Econ: A Suite for Incentive Conflict Assessment ↗
+                        </a>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-meta">Open-source Framework • 2025</div>
+                        <a href="#" class="timeline-title">
+                            Agent Trace Toolkit (v0.4.0) ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Source -->
+        <section id="opensource">
+            <div class="container">
+                <div class="open-source-box">
+                    <div class="open-source-text">
+                        <h3>Open Science Infrastructure</h3>
+                        <p>Fidari develops reproducible research, benchmarks, datasets, and evaluation frameworks that are openly available to the AI safety community.</p>
+                    </div>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-primary">
+                        View GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision">
+            <div class="container">
+                <blockquote>
+                    "Understanding AI requires more than measuring intelligence. It requires understanding behavior."
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="brand">
+                    <span class="brand-icon"></span>
+                    Fidari Institute
+                </a>
+                <ul class="footer-nav">
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="mailto:contact@fidari.org">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                </div>
+                <p>&copy; 2026 Fidari Institute for Agentic Studies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Canvas Script (Agent Network Animation) -->
+    <script>
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const nodes = [];
+        const nodeCount = 38;
+        const maxDistance = 140;
+
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                radius: Math.random() * 1.5 + 1.5
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < maxDistance) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        const alpha = (1 - dist / maxDistance) * 0.25;
+                        ctx.strokeStyle = `rgba(31, 122, 140, ${alpha})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Update & draw nodes
+            for (let i = 0; i < nodes.length; i++) {
+                let node = nodes[i];
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#0b192c';
+                ctx.fill();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
