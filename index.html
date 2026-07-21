@@ -312,83 +312,6 @@
             margin-bottom: 24px;
         }
 
-        /* --- Publications Timeline --- */
-        .timeline {
-            margin-top: 40px;
-            position: relative;
-            padding-left: 24px;
-            border-left: 1px solid var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 32px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -29px;
-            top: 6px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background-color: var(--accent-teal);
-        }
-
-        .timeline-meta {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent-navy);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: color var(--transition-speed);
-        }
-
-        .timeline-title:hover {
-            color: var(--accent-teal);
-        }
-
-        /* --- Open Source Section --- */
-        .open-source-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .open-source-text {
-            max-width: 600px;
-        }
-
-        .open-source-text h3 {
-            font-size: 1.5rem;
-            color: var(--accent-navy);
-            margin-bottom: 12px;
-        }
-
-        .open-source-text p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
         /* --- Vision Section --- */
         .vision {
             background-color: var(--accent-navy);
@@ -451,7 +374,6 @@
             .hero h1 { font-size: 2.6rem; }
             .mission-grid { grid-template-columns: 1fr; gap: 16px; }
             .featured-grid { grid-template-columns: 1fr; }
-            .open-source-box { flex-direction: column; align-items: flex-start; gap: 24px; }
             .vision blockquote { font-size: 1.6rem; }
         }
 
@@ -474,10 +396,9 @@
                     Fidari Institute
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#opensource">Open Source</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research Pillars</a></li>
+                    <li><a href="#projects">Current Projects</a></li>
                 </ul>
             </nav>
         </div>
@@ -493,7 +414,7 @@
                     <p>Fidari researches how autonomous AI agents behave under incentives, uncertainty, oversight, and social environments to build safer and more trustworthy AI systems.</p>
                     <div class="hero-buttons">
                         <a href="#research" class="btn btn-primary">Explore Research</a>
-                        <a href="#publications" class="btn btn-secondary">Read Research Agenda</a>
+                        <a href="#projects" class="btn btn-secondary">Read Research Agenda</a>
                     </div>
                 </div>
             </div>
@@ -541,7 +462,7 @@
         </section>
 
         <!-- Featured Research -->
-        <section>
+        <section id="projects">
             <div class="container">
                 <span class="section-tag">Current Projects</span>
                 <h2 class="section-title">Featured Research</h2>
@@ -570,55 +491,6 @@
             </div>
         </section>
 
-        <!-- Publications -->
-        <section id="publications">
-            <div class="container">
-                <span class="section-tag">Outputs</span>
-                <h2 class="section-title">Publications & Artifacts</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-meta">Working Paper • 2026</div>
-                        <a href="#" class="timeline-title">
-                            Quantifying Goal Drift in Multi-Step Agentic Workflows ↗
-                        </a>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-meta">Technical Report • 2025</div>
-                        <a href="#" class="timeline-title">
-                            Auditing Sandboxed Multi-Agent Environments ↗
-                        </a>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-meta">Benchmark • 2025</div>
-                        <a href="#" class="timeline-title">
-                            Agentic-Econ: A Suite for Incentive Conflict Assessment ↗
-                        </a>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-meta">Open-source Framework • 2025</div>
-                        <a href="#" class="timeline-title">
-                            Agent Trace Toolkit (v0.4.0) ↗
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Open Source -->
-        <section id="opensource">
-            <div class="container">
-                <div class="open-source-box">
-                    <div class="open-source-text">
-                        <h3>Open Science Infrastructure</h3>
-                        <p>Fidari develops reproducible research, benchmarks, datasets, and evaluation frameworks that are openly available to the AI safety community.</p>
-                    </div>
-                    <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-primary">
-                        View GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
-
         <!-- Vision Section -->
         <section class="vision">
             <div class="container">
@@ -638,9 +510,9 @@
                     Fidari Institute
                 </a>
                 <ul class="footer-nav">
-                    <li><a href="#research">Research</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="mailto:contact@fidari.org">Contact</a></li>
                 </ul>
             </div>
