@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fidari Institute for Agentic Studies</title>
     <meta name="google-site-verification" content="Guf5LGlqAKUHA61AA9y5r7-0KyQxf02wf0q_YcfP_os" />
+
     <style>
-        /* --- Root Variables & Theme Setup --- */
         :root {
             --bg-color: #fafbfc;
             --card-bg: #ffffff;
@@ -25,7 +25,6 @@
             --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
         }
 
-        /* --- Base & Reset --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -50,7 +49,10 @@
             padding: 0 24px;
         }
 
-        /* --- Header & Navigation --- */
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             position: fixed;
             top: 0;
@@ -104,7 +106,10 @@
             color: var(--accent-navy);
         }
 
-        /* --- Buttons --- */
+        /* =========================
+           BUTTONS
+        ========================= */
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -140,7 +145,10 @@
             transform: translateY(-1px);
         }
 
-        /* --- Hero Section --- */
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             position: relative;
             padding: 180px 0 120px;
@@ -174,6 +182,11 @@
             font-weight: 600;
         }
 
+        .hero h2 {
+            color: var(--accent-navy);
+            margin-bottom: 8px;
+        }
+
         .hero p {
             font-size: 1.25rem;
             color: var(--text-muted);
@@ -187,7 +200,10 @@
             gap: 16px;
         }
 
-        /* --- Generic Section Styles --- */
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
         section {
             padding: 100px 0;
             border-bottom: 1px solid var(--border-color);
@@ -212,7 +228,10 @@
             font-weight: 600;
         }
 
-        /* --- Mission Section --- */
+        /* =========================
+           ABOUT / MISSION
+        ========================= */
+
         .mission-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -226,7 +245,97 @@
             line-height: 1.7;
         }
 
-        /* --- Research Pillars --- */
+        /* =========================
+           FRAMEWORK
+        ========================= */
+
+        .framework-section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 140px repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .grid-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 16px;
+            font-weight: 600;
+            color: var(--accent-navy);
+        }
+
+        .row-header {
+            justify-content: flex-start;
+        }
+
+        .framework-cell {
+            text-align: left;
+            padding: 24px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            color: var(--text-main);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all var(--transition-speed);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .framework-cell:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .framework-cell.active {
+            border-color: var(--accent-teal);
+            background-color: #f4fafb;
+            box-shadow: 0 8px 24px rgba(31, 122, 140, 0.08);
+        }
+
+        .framework-cell h3 {
+            font-size: 1.05rem;
+            color: var(--accent-navy);
+            margin-bottom: 8px;
+        }
+
+        .framework-cell p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .framework-detail {
+            margin-top: 24px;
+            padding: 28px 32px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-subtle);
+            min-height: 120px;
+        }
+
+        .framework-detail h3 {
+            color: var(--accent-navy);
+            margin-bottom: 8px;
+        }
+
+        .framework-detail p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* =========================
+           FEATURED / PROJECTS
+        ========================= */
+
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -262,7 +371,6 @@
             line-height: 1.5;
         }
 
-        /* --- Featured Research & Experiments --- */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -342,7 +450,10 @@
             font-weight: 600;
         }
 
-        /* --- Vision Section --- */
+        /* =========================
+           VISION
+        ========================= */
+
         .vision {
             background-color: var(--accent-navy);
             color: #ffffff;
@@ -360,7 +471,10 @@
             margin: 0 auto;
         }
 
-        /* --- Footer --- */
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background-color: var(--bg-color);
             padding: 60px 0;
@@ -380,15 +494,19 @@
             display: flex;
             gap: 24px;
             list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .footer-nav a, .social-links a {
+        .footer-nav a,
+        .social-links a {
             color: var(--text-muted);
             text-decoration: none;
             transition: color var(--transition-speed);
         }
 
-        .footer-nav a:hover, .social-links a:hover {
+        .footer-nav a:hover,
+        .social-links a:hover {
             color: var(--accent-navy);
         }
 
@@ -399,32 +517,74 @@
             align-items: center;
         }
 
-        /* --- Responsive Styles --- */
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
         @media (max-width: 850px) {
-            .hero h1 { font-size: 2.6rem; }
-            .mission-grid { grid-template-columns: 1fr; gap: 16px; }
-            .featured-grid { grid-template-columns: 1fr; }
-            .vision blockquote { font-size: 1.6rem; }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vision blockquote {
+                font-size: 1.6rem;
+            }
+
+            .framework-grid {
+                grid-template-columns: 100px repeat(3, minmax(180px, 1fr));
+                overflow-x: auto;
+            }
         }
 
         @media (max-width: 600px) {
-            .hero-buttons { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .nav-links { gap: 16px; }
-            .footer-content, .footer-bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .footer-content,
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Header Navigation -->
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <header>
         <div class="container">
             <nav>
                 <a href="#" class="brand">
-                    <img src="Fidari Logo.png" alt="Fidari Institute Logo" class="brand-logo-img">
+                    <img src="Fidari Logo.png"
+                         alt="Fidari Institute Logo"
+                         class="brand-logo-img">
                     Fidari Institute
                 </a>
+
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#research">Research Pillars</a></li>
@@ -434,218 +594,652 @@
         </div>
     </header>
 
+
     <main>
-        <!-- Hero Section -->
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
         <section class="hero">
             <canvas id="network-canvas"></canvas>
+
             <div class="container">
                 <div class="hero-content">
+
                     <h1>Understanding Autonomous AI Agents.</h1>
+
                     <h2><i>Since 2026.</i></h2>
-                    <h3> </h3>
-                    <p>Fidari is an interdisciplinary research community that studies how autonomous AI agents behave under different motivations, institutional structures, forms of oversight, and societal environments.</p>
+
+                    <h3></h3>
+
+                    <p>
+                        Fidari is an interdisciplinary research community that studies
+                        how autonomous AI agents behave under different motivations,
+                        institutional structures, forms of oversight, and societal
+                        environments.
+                    </p>
+
                     <div class="hero-buttons">
-                        <a href="#research" class="btn btn-primary">Research Pillars</a>
+                        <a href="#research" class="btn btn-primary">
+                            Research Pillars
+                        </a>
                     </div>
+
                 </div>
             </div>
         </section>
 
-<!-- Mission Section --> 
-<section id="about"> 
-  <div class="container"> 
-    <div class="mission-grid"> 
-      <div> 
-        <span class="section-tag">Mission</span> 
-        <h2 class="section-title">Why Agentic Studies?</h2> 
-      </div> 
-      <div class="mission-text"> 
-       <p>As AI systems become increasingly autonomous, we need to know why they do what they do, helping us anticipate their actions. Nevertheless, Fidari's main goal is not to prevent certain outcomes but rather to study AI as an organism to discover and investigate its behaviors. </p>
-<a href="https://doi.org/10.5281/zenodo.23147127" class="whitepaper-btn" target="_blank" rel="noopener noreferrer">View the Agentic Studies Whitepaper (https://doi.org/10.5281/zenodo.23147127)</a>
-      </div> 
-      <div> 
-        <h2 class="section-title">What does Fidari do?</h2> 
-      </div>
-      <div class="mission-text"> 
-        <p>Fidari is an interdisciplinary community dedicated to implementing Agentic Studies from different perspectives, from psychology to political science. We believe that <b>every field</b> offers a unique viewpoint into Agentic Studies, producing vital cross-domain research.</p> 
-      </div> 
 
-    </div> 
-  </div> 
-</section>
+        <!-- =========================
+             ABOUT
+        ========================= -->
 
-   <!-- Research Pillars -->
-<section id="research">
-    <div class="container">
-        <span class="section-tag">Core Focus</span>
-        <h2 class="section-title">The Agentic Studies Framework</h2>
-        <p class="section-intro">
-            Agentic Studies organizes research on artificial agency along three dimensions,
-            across three levels of analysis.
-        </p>
-<h3 class="subsection-title dimensions-heading">Three Dimensions</h3>
-<div class="pillars-grid">
-    <div class="pillar-card">
-        <h3>Agentic Behavior</h3>
-        <p>What agents do: how they act, respond to information, and adapt to their contexts and environments.</p>
-    </div>
-    <div class="pillar-card">
-        <h3>Agentic Motivation</h3>
-        <p>What agents pursue: the goals, incentives, and hidden motivations that shape their actions.</p>
-    </div>
-    <div class="pillar-card">
-        <h3>Agentic Power Relations</h3>
-        <p>How agents influence, constrain, enable, or depend on one another and on the humans they work with.</p>
-    </div>
-</div>
-
-<h3 class="subsection-title levels-heading">Three Levels of Analysis</h3>
-<div class="pillars-grid">
-    <div class="pillar-card">
-        <h3>Individual</h3>
-        <p>How a single agent behaves, what it pursues, and how it responds to authority and context.</p>
-    </div>
-    <div class="pillar-card">
-        <h3>Group</h3>
-        <p>How collectives of agents cooperate, compete, form norms, hierarchies, and coalitions.</p>
-    </div>
-    <div class="pillar-card">
-        <h3>Society</h3>
-        <p>How interactions among many groups give rise to norms, institutions, and structures existing outside of behavior, which in turns shape the agents themselves.</p>
-    </div>
-</div>
-</section>
-
-        <!-- Featured Research & Experiments -->
-        <section id="projects">
+        <section id="about">
             <div class="container">
-                <span class="section-tag">Current Projects</span>
-             <h2><a href="https://github.com/fidari-institute/fidari" style="color: inherit; text-decoration: none;">Featured (click to view)</a></h2>
+
+                <div class="mission-grid">
+
+                    <div>
+                        <span class="section-tag">Mission</span>
+
+                        <h2 class="section-title">
+                            Why Agentic Studies?
+                        </h2>
+                    </div>
+
+                    <div class="mission-text">
+
+                        <p>
+                            As AI systems become increasingly autonomous, we need to know
+                            why they do what they do, helping us anticipate their actions.
+                            Nevertheless, Fidari's main goal is not to prevent certain
+                            outcomes but rather to study AI as an organism to discover
+                            and investigate its behaviors.
+                        </p>
+
+                        <br>
+
+                        <a
+                            href="https://doi.org/10.5281/zenodo.23147127"
+                            class="whitepaper-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View the Agentic Studies Whitepaper
+                        </a>
+
+                    </div>
+
+
+                    <div>
+                        <h2 class="section-title">
+                            What does Fidari do?
+                        </h2>
+                    </div>
+
+                    <div class="mission-text">
+
+                        <p>
+                            Fidari is an interdisciplinary community dedicated to
+                            implementing Agentic Studies from different perspectives,
+                            from psychology to political science. We believe that
+                            <b>every field</b> offers a unique viewpoint into Agentic
+                            Studies, producing vital cross-domain research.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             RESEARCH FRAMEWORK
+        ========================= -->
+
+        <section id="research" class="framework-section">
+
+            <div class="container">
+
+                <span class="section-tag">
+                    Research Framework
+                </span>
+
+                <h2 class="section-title">
+                    Three Dimensions × Three Levels
+                </h2>
+
+
+                <div class="framework-grid">
+
+                    <!-- Column headers -->
+
+                    <div></div>
+
+                    <div class="grid-header">
+                        Agentic Behavior
+                    </div>
+
+                    <div class="grid-header">
+                        Agentic Motivation
+                    </div>
+
+                    <div class="grid-header">
+                        Agentic Power Relations
+                    </div>
+
+
+                    <!-- INDIVIDUAL -->
+
+                    <div class="grid-header row-header">
+                        Individual
+                    </div>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Individual × Agentic Behavior"
+                        data-description="How a single agent acts, responds to information, and adapts to its environment."
+                    >
+                        <h3>Behavior</h3>
+                        <p>
+                            How a single agent acts, responds, and adapts.
+                        </p>
+                    </button>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Individual × Agentic Motivation"
+                        data-description="What drives a single agent: its goals, incentives, preferences, and underlying motivations."
+                    >
+                        <h3>Motivation</h3>
+                        <p>
+                            What drives a single agent's goals and actions.
+                        </p>
+                    </button>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Individual × Agentic Power Relations"
+                        data-description="How an individual agent exercises, experiences, or responds to influence, authority, constraint, and dependence."
+                    >
+                        <h3>Power Relations</h3>
+                        <p>
+                            How a single agent experiences and exercises influence.
+                        </p>
+                    </button>
+
+
+                    <!-- GROUP -->
+
+                    <div class="grid-header row-header">
+                        Group
+                    </div>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Group × Agentic Behavior"
+                        data-description="How agents cooperate, compete, coordinate, adapt, and establish recurring patterns of collective behavior."
+                    >
+                        <h3>Behavior</h3>
+                        <p>
+                            How agents cooperate, compete, and coordinate.
+                        </p>
+                    </button>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Group × Agentic Motivation"
+                        data-description="How shared and competing goals, incentives, and interests shape collective action and coalition formation."
+                    >
+                        <h3>Motivation</h3>
+                        <p>
+                            How goals shape collective action.
+                        </p>
+                    </button>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Group × Agentic Power Relations"
+                        data-description="How influence, hierarchy, dependence, authority, and coalition-building structure relationships within groups."
+                    >
+                        <h3>Power Relations</h3>
+                        <p>
+                            How hierarchy and influence emerge within groups.
+                        </p>
+                    </button>
+
+
+                    <!-- SOCIETY -->
+
+                    <div class="grid-header row-header">
+                        Society
+                    </div>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Society × Agentic Behavior"
+                        data-description="How patterns of behavior across agents and groups accumulate into broader social practices and structures."
+                    >
+                        <h3>Behavior</h3>
+                        <p>
+                            How patterns of behavior develop across society.
+                        </p>
+                    </button>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Society × Agentic Motivation"
+                        data-description="How incentives, collective goals, and competing interests shape institutions, norms, and large-scale social dynamics."
+                    >
+                        <h3>Motivation</h3>
+                        <p>
+                            How incentives and goals shape society.
+                        </p>
+                    </button>
+
+                    <button
+                        class="framework-cell"
+                        data-title="Society × Agentic Power Relations"
+                        data-description="How power is distributed across groups and how those relationships reproduce, constrain, or transform social structures."
+                    >
+                        <h3>Power Relations</h3>
+                        <p>
+                            How power is distributed across society.
+                        </p>
+                    </button>
+
+                </div>
+
+
+                <!-- Dynamic detail panel -->
+
+                <div
+                    class="framework-detail"
+                    id="framework-detail"
+                >
+                    <h3>
+                        Explore the framework
+                    </h3>
+
+                    <p>
+                        Click any intersection to explore that dimension
+                        at that level of analysis.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================= -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <span class="section-tag">
+                    Current Projects
+                </span>
+
+                <h2>
+                    <a
+                        href="https://github.com/fidari-institute/fidari"
+                        style="color: inherit; text-decoration: none;"
+                    >
+                        Featured (click to view)
+                    </a>
+                </h2>
+
+
                 <div class="featured-grid">
 
-                    <!-- EXPERIMENT CARD 1 -->
                     <div class="featured-card">
+
                         <div>
-                            <span class="status-badge">Research Agenda</span>
-                            <h3> </h3>
-                            <h3>Secret Loyalty Detection</h3>
-                            <p>Methods for identifying and validating secret loyalties.</p>
+
+                            <span class="status-badge">
+                                Research Agenda
+                            </span>
+
+                            <h3>
+                                Secret Loyalty Detection
+                            </h3>
+
+                            <p>
+                                Methods for identifying and validating secret loyalties.
+                            </p>
+
                         </div>
-                        <div>
-                  <!--          <a href="https://github.com/your-org/fidari-research/blob/main/research/secret-loyalty-overview.md" target="_blank" rel="noopener" class="btn btn-secondary">
-                                Read Overview ↗
-                            </a> -->
-                        </div>
+
+                        <div></div>
+
                     </div>
 
                 </div>
+
             </div>
         </section>
 
-        <!-- Vision Section -->
+
+        <!-- =========================
+             VISION
+        ========================= -->
+
         <section class="vision">
+
             <div class="container">
+
                 <blockquote>
                     "Intelligence gives AI power. Behavior gives it reason."
                 </blockquote>
+
             </div>
+
         </section>
+
     </main>
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
+
         <div class="container">
+
             <div class="footer-content">
+
                 <a href="#" class="brand">
-                    <img src="Fidari Logo.png" alt="Fidari Institute Logo" class="brand-logo-img">
+
+                    <img
+                        src="Fidari Logo.png"
+                        alt="Fidari Institute Logo"
+                        class="brand-logo-img"
+                    >
+
                     Fidari Institute
+
                 </a>
+
+
                 <ul class="footer-nav">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="https://github.com/fidari-institute/fidari">GitHub</a></li>
-                    <h4 style="font-weight: normal;">Founded by Shu-Hao Liu (2026)</h4>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#research">
+                            Research
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/fidari-institute/fidari">
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <h4 style="font-weight: normal;">
+                            Founded by Shu-Hao Liu (2026)
+                        </h4>
+                    </li>
 
                 </ul>
+
             </div>
-        <!--   <div class="footer-bottom">
-                <div class="social-links">
-                    <a href="https://github.com/your-org/fidari-research" target="_blank" rel="noopener">GitHub Repository</a>
-                </div>
-                <p>&copy; 2026 Fidari Institute for Agentic Studies. All rights reserved.</p>
-            </div> -->
+
         </div>
+
     </footer>
 
-    <!-- Interactive Canvas Script (Agent Network Animation) -->
+
+    <!-- =========================
+         FRAMEWORK INTERACTION
+    ========================= -->
+
     <script>
-        const canvas = document.getElementById('network-canvas');
-        const ctx = canvas.getContext('2d');
+
+        const frameworkCells =
+            document.querySelectorAll('.framework-cell');
+
+        const frameworkDetail =
+            document.getElementById('framework-detail');
+
+
+        frameworkCells.forEach(cell => {
+
+            cell.addEventListener('click', () => {
+
+                /*
+                 * Remove the active state
+                 * from every other cell.
+                 */
+
+                frameworkCells.forEach(otherCell => {
+                    otherCell.classList.remove('active');
+                });
+
+
+                /*
+                 * Highlight the selected cell.
+                 */
+
+                cell.classList.add('active');
+
+
+                /*
+                 * Update the detail panel.
+                 */
+
+                frameworkDetail.innerHTML = `
+                    <h3>${cell.dataset.title}</h3>
+                    <p>${cell.dataset.description}</p>
+                `;
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- =========================
+         HERO NETWORK ANIMATION
+    ========================= -->
+
+    <script>
+
+        const canvas =
+            document.getElementById('network-canvas');
+
+        const ctx =
+            canvas.getContext('2d');
+
 
         function resizeCanvas() {
-            canvas.width = canvas.parentElement.clientWidth;
-            canvas.height = canvas.parentElement.clientHeight;
+
+            canvas.width =
+                canvas.parentElement.clientWidth;
+
+            canvas.height =
+                canvas.parentElement.clientHeight;
+
         }
-        
-        window.addEventListener('resize', resizeCanvas);
+
+
+        window.addEventListener(
+            'resize',
+            resizeCanvas
+        );
+
         resizeCanvas();
 
+
         const nodes = [];
+
         const nodeCount = 38;
+
         const maxDistance = 140;
 
+
         for (let i = 0; i < nodeCount; i++) {
+
             nodes.push({
+
                 x: Math.random() * canvas.width,
+
                 y: Math.random() * canvas.height,
+
                 vx: (Math.random() - 0.5) * 0.4,
+
                 vy: (Math.random() - 0.5) * 0.4,
+
                 radius: Math.random() * 1.5 + 1.5
+
             });
+
         }
+
 
         function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw connections
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            /*
+             * Draw connections between nearby nodes.
+             */
+
             for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const dx = nodes[i].x - nodes[j].x;
-                    const dy = nodes[i].y - nodes[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                for (
+                    let j = i + 1;
+                    j < nodes.length;
+                    j++
+                ) {
+
+                    const dx =
+                        nodes[i].x - nodes[j].x;
+
+                    const dy =
+                        nodes[i].y - nodes[j].y;
+
+                    const dist =
+                        Math.sqrt(
+                            dx * dx + dy * dy
+                        );
+
 
                     if (dist < maxDistance) {
+
                         ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        const alpha = (1 - dist / maxDistance) * 0.25;
-                        ctx.strokeStyle = `rgba(31, 122, 140, ${alpha})`;
+
+                        ctx.moveTo(
+                            nodes[i].x,
+                            nodes[i].y
+                        );
+
+                        ctx.lineTo(
+                            nodes[j].x,
+                            nodes[j].y
+                        );
+
+
+                        const alpha =
+                            (1 - dist / maxDistance) * 0.25;
+
+
+                        ctx.strokeStyle =
+                            `rgba(31, 122, 140, ${alpha})`;
+
                         ctx.lineWidth = 1;
+
                         ctx.stroke();
+
                     }
+
                 }
+
             }
 
-            // Update & draw nodes
+
+            /*
+             * Move and draw nodes.
+             */
+
             for (let i = 0; i < nodes.length; i++) {
+
                 let node = nodes[i];
+
+
                 node.x += node.vx;
+
                 node.y += node.vy;
 
-                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+                if (
+                    node.x < 0 ||
+                    node.x > canvas.width
+                ) {
+                    node.vx *= -1;
+                }
+
+
+                if (
+                    node.y < 0 ||
+                    node.y > canvas.height
+                ) {
+                    node.vy *= -1;
+                }
+
 
                 ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                ctx.fillStyle = '#0b192c';
+
+                ctx.arc(
+                    node.x,
+                    node.y,
+                    node.radius,
+                    0,
+                    Math.PI * 2
+                );
+
+                ctx.fillStyle =
+                    '#0b192c';
+
                 ctx.fill();
+
             }
 
+
             requestAnimationFrame(animate);
+
         }
 
+
         animate();
+
     </script>
+
 </body>
 </html>
